@@ -12,7 +12,12 @@ pipeline {
         sh 'mvn compile'
       }
     }
-
+stage("test"){
+          steps{
+              echo 'test the application'
+              sh 'mvn test'
+          }
+      }
     stage('package') {
       steps {
         echo 'package the application'
